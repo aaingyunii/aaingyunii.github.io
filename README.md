@@ -1,40 +1,36 @@
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# 포트폴리오 사이트
 
+### - `github.io` 배포
+### - `web.app` 배포 (`firebase`)
 
-This is Prologue, a simple, single page responsive site template. It features a
-clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+## `Docker test` 환경 세팅 및 실행
 
-Demo content images* are courtesy of the ridiculously talented Felicia Simion. Check out
-more of her amazing work over at deviantART:
+### docker build
+- https://hub.docker.com/_/httpd
+```bash
+$ docker build -t my-apache2 .
+$ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+my-apache2   latest    e133bdde4db8   2 minutes ago   173MB
+```
 
-http://ineedchemicalx.deviantart.com/
+### docker run
+``` bash
+$ sudo docker run -dit --name my-webapp -p 8080:80 my-apache2
+$ sudo docker ps
+CONTAINER ID   IMAGE        COMMAND              CREATED         STATUS         PORTS                                   NAMES
+c52058cd5124   my-apache2   "httpd-foreground"   6 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   my-webapp
+```
 
-(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
-and/or use any of Felicia's work without her explicit permission!)
+### into docker
+```bash
+$ sudo docker exec -it my-webapp bash
 
-Demo banner images* courtesy of Unsplash, a radtastic collection of CC0 (public domain)
-images you can use for pretty much whatever.
+root@c52058cd5124:/usr/local/apache2# ls -l
 
-(* = Not included)
+root@c52058cd5124:/usr/local/apache2# cd htdocs/
 
-AJ
-aj@lkn.io | @ajlkn
+root@c52058cd5124:/usr/local/apache2/htdocs# ls -l
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
-
-
-Credits:
-
-	Demo Images:
-		Felicia Simion (ineedchemicalx.deviantart.com)
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+#파일 확인 후 http://localhost:8080 으로 웹 확인
+```
