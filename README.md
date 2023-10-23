@@ -148,3 +148,54 @@ $ docker push aaingyunii/aaingyunii.github.io
 - result
 
 ![image](https://github.com/aaingyunii/aaingyunii.github.io/assets/31847834/ed2b674f-9a88-4466-ab38-bffb104bc627)
+
+
+## `Load Balancer` - LB
+
+### 팀원들의 블로그들을 등록하여 사이트 변환 확인
+
+```mermaid
+graph TD;
+    user --> ngix_lb;
+    ngix_lb-->teamblog-1;
+    ngix_lb-->teamblog-2;
+```
+
+### `default.conf` 파일 생성 및 작성
+```
+upstream blog_servers {
+        server hahyunkim-blog:80; # 팀원 블로그 도커 컨테이너
+        server py-blog:80; # 팀원 블로그 도커 컨테이너
+	server jaeho-blog:80; # 팀원 블로그 도커 컨테이너
+}
+
+server {
+        listen 80;
+
+    location / {
+        proxy_pass http://blog_servers;
+    }
+}
+```
+
+### 도커 명령어 및 `LB` testing
+
+```bash
+# https://docs.docker.com/engine/reference/commandline/run/#options
+$ docker build -t myblog .
+$ git pull 팀원들의 dockerhub 주소(본인 블로그를 등록한 httpd 도커 이미지)
+$ docker run -dit --name teamblog-1 -p 8051:80 teamblog1
+$ docker run -dit --name teamblog-2 -p 8052:80 teamblog2
+
+$ docker build -t nginx_lb docker_file/lb_nginx
+$ docker images
+REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
+myblog              1.3.0     b9a01b885bee   39 seconds ago   174MB
+nginx_lb            1.3.0     a325da935d4f   3 minutes ago    187MB
+
+$ docker run --name ngix_lb -d -p 9052:80 --link teamblog-1 --link teamblog-2 nginx_lb:1.3.0
+
+$ docker ps
+# 연결된 도커 컨테이너들이 활성화 중 인지 확인 후
+# nginx-lb 주소로 여러 번 접속하여 사이트 변환 확인
+```
