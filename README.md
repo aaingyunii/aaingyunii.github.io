@@ -44,44 +44,44 @@ root@c52058cd5124:/usr/local/apache2/htdocs# ls -l
 ```
 
 ### Deploy DEV
-- https://dj-twenty-six.web.app
+- https://aaingyunii.web.app
 ```bash
 $ firebase deploy
 
-=== Deploying to 'dj-twenty-six'...
+=== Deploying to 'aaingyunii'...
 
 i  deploying hosting
-i  hosting[dj-twenty-six]: beginning deploy...
-i  hosting[dj-twenty-six]: found 364 files in /
-✔  hosting[dj-twenty-six]: file upload complete
-i  hosting[dj-twenty-six]: finalizing version...
-✔  hosting[dj-twenty-six]: version finalized
-i  hosting[dj-twenty-six]: releasing new version...
-✔  hosting[dj-twenty-six]: release complete
+i  hosting[aaingyunii]: beginning deploy...
+i  hosting[aaingyunii]: found 364 files in /
+✔  hosting[aaingyunii]: file upload complete
+i  hosting[aaingyunii]: finalizing version...
+✔  hosting[aaingyunii]: version finalized
+i  hosting[aaingyunii]: releasing new version...
+✔  hosting[aaingyunii]: release complete
 
 ✔  Deploy complete!
 
-Project Console: https://console.firebase.google.com/project/dj-twenty-six/overview
-Hosting URL: https://dj-twenty-six.web.app
+Project Console: https://console.firebase.google.com/project/aaingyunii/overview
+Hosting URL: https://aaingyunii.web.app
 ```
 
 ### Deploy ST
-- https://dj-twenty-six.fly.dev/
+- https://aaingyunii.fly.dev/
 ```bash
 # https://fly.io/docs/hands-on/install-flyctl/
 $ curl -L https://fly.io/install.sh | sh
 $ tail -n 3 ~/.zshrc 
 # fly.io
-export FLYCTL_INSTALL="/home/dj26/.fly"
+export FLYCTL_INSTALL="/home/user1/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 $ fly auth login
 
 $ flyctl launch
-Creating app in /home/dj26/code/dj-twenty-six.github.io
+Creating app in /home/user1/code/aaingyunii.github.io
 Scanning source code
 Detected a Dockerfile app
-? Choose an app name (leave blank to generate one): dj-twenty-six                                                                                                                                                                            
+? Choose an app name (leave blank to generate one): aaingyunii                                                                                                                                                                            
 automatically selected personal organization: data.mario24@gmail.com
 Some regions require a paid plan (bom, fra, maa).
 See https://fly.io/plans to set up a plan.
@@ -89,21 +89,21 @@ See https://fly.io/plans to set up a plan.
 ? Choose a region for deployment: Tokyo, Japan (nrt)
 App will use 'nrt' region as primary
 
-Created app 'dj-twenty-six' in organization 'personal'
-Admin URL: https://fly.io/apps/dj-twenty-six
-Hostname: dj-twenty-six.fly.dev
+Created app 'aaingyunii' in organization 'personal'
+Admin URL: https://fly.io/apps/aaingyunii
+Hostname: aaingyunii.fly.dev
 ? Would you like to set up a Postgresql database now? No
 ? Would you like to set up an Upstash Redis database now? No
 ? Create .dockerignore from 1 .gitignore files? No
 Wrote config file fly.toml
 ? Would you like to deploy now? No
-Validating /home/dj26/code/dj-twenty-six.github.io/fly.toml
+Validating /home/user1/code/aaingyunii.github.io/fly.toml
 Platform: machines
 ✓ Configuration is valid
 Your app is ready! Deploy with `flyctl deploy`
 
 $ tail -n 13  fly.toml
-app = "dj-twenty-six"
+app = "aaingyunii"
 primary_region = "nrt"
 
 [build]
@@ -119,7 +119,7 @@ primary_region = "nrt"
 
 $ fly deploy
 ==> Verifying app config
-Validating /home/dj26/code/dj-twenty-six.github.io/fly.toml
+Validating /home/user1/code/aaingyunii.github.io/fly.toml
 Platform: machines
 ✓ Configuration is valid
 --> Verified app config
@@ -154,10 +154,10 @@ Remote builder fly-builder-solitary-frog-9277 ready
  => exporting to image                                                                                                                                                                                                                  0.1s 
  => => exporting layers                                                                                                                                                                                                                 0.1s 
  => => writing image sha256:71d9e30d334984aa8709593a5e784be5ec28dafd4f79767cfc56afa691a8e652                                                                                                                                            0.0s 
- => => naming to registry.fly.io/dj-twenty-six:deployment-01HDD3HGE3TH8J67MFQA7N0PY1                                                                                                                                                    0.0s 
+ => => naming to registry.fly.io/aaingyunii:deployment-01HDD3HGE3TH8J67MFQA7N0PY1                                                                                                                                                    0.0s 
 --> Building image done
 ==> Pushing image to fly
-The push refers to repository [registry.fly.io/dj-twenty-six]
+The push refers to repository [registry.fly.io/aaingyunii]
 6938b9c83b09: Pushed
 b7094d4685d5: Pushed
 87ca57c6f4e9: Pushed
@@ -166,12 +166,12 @@ b7094d4685d5: Pushed
 cb4596cc1454: Pushed
 deployment-01HDD3HGE3TH8J67MFQA7N0PY1: digest: sha256:202cf5aa9a6d4ce015e028f796d2aebe1c9eebbd5007810d0f006e02ad054928 size: 1577
 --> Pushing image done
-image: registry.fly.io/dj-twenty-six:deployment-01HDD3HGE3TH8J67MFQA7N0PY1
+image: registry.fly.io/aaingyunii:deployment-01HDD3HGE3TH8J67MFQA7N0PY1
 image size: 174 MB
 
-Watch your deployment at https://fly.io/apps/dj-twenty-six/monitoring
+Watch your deployment at https://fly.io/apps/aaingyunii/monitoring
 
-Provisioning ips for dj-twenty-six
+Provisioning ips for aaingyunii
   Dedicated ipv6: 2a09:8280:1::2d:8f27
   Shared ipv4: 66.241.124.124
   Add a dedicated ipv4 with: fly ips allocate-v4
@@ -187,14 +187,14 @@ NOTE: The machines for [app] have services with 'auto_stop_machines = true' that
 
 -------
 
-Visit your newly deployed app at https://dj-twenty-six.fly.dev/
+Visit your newly deployed app at https://aaingyunii.fly.dev/
 ```
 
 ### how2pr
 - https://oss.cashmallow.com/team/how2pr/
 
 ### Deploy PRD
-- https://dj-twenty-six.github.io
+- https://aaingyunii.github.io
 - merge PR to main
 
 
