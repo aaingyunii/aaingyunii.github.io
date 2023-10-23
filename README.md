@@ -134,5 +134,17 @@ Visit your newly deployed app at https://aaingyunii.fly.dev/
 - merge PR to main
 
 
+### Register to Dockerhub
 
+```bash
+$ docker login
 
+$ docker build -t aaingyunii/aaingyunii.github.io .
+
+$ docker push aaingyunii/aaingyunii.github.io
+
+```
+
+- result
+
+![image](https://github.com/aaingyunii/aaingyunii.github.io/assets/31847834/ed2b674f-9a88-4466-ab38-bffb104bc627)
