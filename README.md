@@ -120,72 +120,8 @@ primary_region = "nrt"
 $ fly deploy
 ==> Verifying app config
 Validating /home/user1/code/aaingyunii.github.io/fly.toml
-Platform: machines
-✓ Configuration is valid
---> Verified app config
-==> Building image
-Remote builder fly-builder-solitary-frog-9277 ready
-==> Building image with Docker
---> docker host: 20.10.12 linux x86_64
-[+] Building 3.5s (7/7) FINISHED
- => [internal] load build definition from Dockerfile                                                                                                                                                                                    0.1s
- => => transferring dockerfile: 86B                                                                                                                                                                                                     0.1s 
- => [internal] load .dockerignore                                                                                                                                                                                                       0.1s 
- => => transferring context: 2B                                                                                                                                                                                                         0.1s 
- => [internal] load metadata for docker.io/library/httpd:2.4                                                                                                                                                                            0.9s
- => [internal] load build context                                                                                                                                                                                                       1.6s
- => => transferring context: 5.57MB                                                                                                                                                                                                     1.5s 
- => [1/2] FROM docker.io/library/httpd:2.4@sha256:ed6db4a8c394d075c9c59a3dbd61a3818cd302d9948057f1e19046e5bffec027                                                                                                                      2.2s 
- => => resolve docker.io/library/httpd:2.4@sha256:ed6db4a8c394d075c9c59a3dbd61a3818cd302d9948057f1e19046e5bffec027                                                                                                                      0.0s 
- => => sha256:a378f10b321842c3042cdeff4f6997f34f4cb21f2eff27704b7f6193ab7b5fea 29.15MB / 29.15MB                                                                                                                                        0.5s
- => => sha256:c20157372e943d84bb5a0624e80395697de1f41ecd54b3bcead2b03bb6b13fe8 176B / 176B                                                                                                                                              0.1s 
- => => sha256:073cbcfef6634b5131786873a7a92a3b3bda43672e5830126dfa94352649358d 4.20MB / 4.20MB                                                                                                                                          0.3s 
- => => sha256:5f75f8a17f406c926d42ef7e5e0803a23b150c46f77cda9c83bff10db3d68f2f 31.40MB / 31.40MB                                                                                                                                        0.6s 
- => => sha256:39fc6f0c5be2c5b90e4d0881260800bc921cb4c1db44c7a55e0b638914f0842f 301B / 301B                                                                                                                                              0.1s 
- => => sha256:ed6db4a8c394d075c9c59a3dbd61a3818cd302d9948057f1e19046e5bffec027 1.86kB / 1.86kB                                                                                                                                          0.0s 
- => => sha256:2f1ec45327a35711f293cf543c2e0efadfd44bc71e8081dcd76a558b99778005 1.37kB / 1.37kB                                                                                                                                          0.0s 
- => => sha256:75a48b16cd565cdaff0cfcbe3462c292e56108a22b9733c0a04a9dc1cbd7a774 9.09kB / 9.09kB                                                                                                                                          0.0s 
- => => extracting sha256:a378f10b321842c3042cdeff4f6997f34f4cb21f2eff27704b7f6193ab7b5fea                                                                                                                                               0.7s
- => => extracting sha256:c20157372e943d84bb5a0624e80395697de1f41ecd54b3bcead2b03bb6b13fe8                                                                                                                                               0.0s 
- => => extracting sha256:073cbcfef6634b5131786873a7a92a3b3bda43672e5830126dfa94352649358d                                                                                                                                               0.1s 
- => => extracting sha256:5f75f8a17f406c926d42ef7e5e0803a23b150c46f77cda9c83bff10db3d68f2f                                                                                                                                               0.6s 
- => => extracting sha256:39fc6f0c5be2c5b90e4d0881260800bc921cb4c1db44c7a55e0b638914f0842f                                                                                                                                               0.0s 
- => [2/2] COPY . /usr/local/apache2/htdocs/                                                                                                                                                                                             0.1s 
- => exporting to image                                                                                                                                                                                                                  0.1s 
- => => exporting layers                                                                                                                                                                                                                 0.1s 
- => => writing image sha256:71d9e30d334984aa8709593a5e784be5ec28dafd4f79767cfc56afa691a8e652                                                                                                                                            0.0s 
- => => naming to registry.fly.io/aaingyunii:deployment-01HDD3HGE3TH8J67MFQA7N0PY1                                                                                                                                                    0.0s 
---> Building image done
-==> Pushing image to fly
-The push refers to repository [registry.fly.io/aaingyunii]
-6938b9c83b09: Pushed
-b7094d4685d5: Pushed
-87ca57c6f4e9: Pushed
-1343ea427053: Pushed
-8db3e477577e: Pushed
-cb4596cc1454: Pushed
-deployment-01HDD3HGE3TH8J67MFQA7N0PY1: digest: sha256:202cf5aa9a6d4ce015e028f796d2aebe1c9eebbd5007810d0f006e02ad054928 size: 1577
---> Pushing image done
-image: registry.fly.io/aaingyunii:deployment-01HDD3HGE3TH8J67MFQA7N0PY1
-image size: 174 MB
 
-Watch your deployment at https://fly.io/apps/aaingyunii/monitoring
-
-Provisioning ips for aaingyunii
-  Dedicated ipv6: 2a09:8280:1::2d:8f27
-  Shared ipv4: 66.241.124.124
-  Add a dedicated ipv4 with: fly ips allocate-v4
-
-This deployment will:
- * create 2 "app" machines
-
-No machines in group app, launching a new machine
-Creating a second machine to increase service availability
-Finished launching new machines
--------
-NOTE: The machines for [app] have services with 'auto_stop_machines = true' that will be stopped when idling
-
--------
+...
 
 Visit your newly deployed app at https://aaingyunii.fly.dev/
 ```
