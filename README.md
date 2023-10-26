@@ -136,6 +136,8 @@ Visit your newly deployed app at https://aaingyunii.fly.dev/
 
 ### Register to Dockerhub
 
+- https://hub.docker.com/r/aaingyunii/github.io/tags
+
 ```bash
 $ docker login
 
@@ -146,6 +148,7 @@ $ docker push aaingyunii/aaingyunii.github.io
 ```
 
 - result
+- `$ docker pull aaingyunii/github.io:latest`
 
 ![image](https://github.com/aaingyunii/aaingyunii.github.io/assets/31847834/ed2b674f-9a88-4466-ab38-bffb104bc627)
 
