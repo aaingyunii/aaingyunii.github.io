@@ -150,8 +150,7 @@ $ docker push aaingyunii/aaingyunii.github.io
 - result
 - `$ docker pull aaingyunii/github.io:latest`
 
-![image](https://github.com/aaingyunii/aaingyunii.github.io/assets/31847834/ed2b674f-9a88-4466-ab38-bffb104bc627)
-
+![image](https://github.com/aaingyunii/aaingyunii.github.io/assets/31847834/74264546-233b-493e-908e-01bed80a52e0)
 
 ## `Load Balancer` - LB
 
